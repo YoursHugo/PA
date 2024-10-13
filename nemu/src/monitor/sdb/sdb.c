@@ -55,16 +55,24 @@ static int cmd_q(char *args) {
 static int cmd_help(char *args);
 
 static int cmd_si(char *args) {
+  if(args[0]=='\0') 
   cpu_exec(1);
+  else 
+  cpu_exec(args[0]);
   return 0;
 }
 
 static int cmd_info(char *args) {
+  if(args[0] == 'r')
   isa_reg_display();
+  //if(args[0] == 'w')
+
   return 0;
 }
 
 static int cmd_x(char *args) {
+  //for(int i=0;i<CONFIG_MSIZE;i++)
+  //printf("i:\t%08x\n",paddr[i]);
   return 0;
 }
 static int cmd_p(char *args) {
