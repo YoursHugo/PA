@@ -59,6 +59,23 @@ static int cmd_si(char *args) {
   return 0;
 }
 
+static int cmd_info(char *args) {
+  return 0;
+}
+
+static int cmd_x(char *args) {
+  return 0;
+}
+static int cmd_p(char *args) {
+  return 0;
+}
+static int cmd_w(char *args) {
+  return 0;
+}
+static int cmd_d(char *args) {
+  return 0;
+}
+
 static struct {
   const char *name;
   const char *description;
@@ -68,11 +85,11 @@ static struct {
   { "c", "Continue the execution of the program", cmd_c },
   { "q", "Exit NEMU", cmd_q },
   { "si", "Step into", cmd_si },
-  { "info",  },
-  { "x" },
-  { "p" },
-  { "w" },
-  { "d" },
+  { "info", "Print info", cmd_info },
+  { "x" ,"Scan memory", cmd_x},
+  { "p" ,"Print expression", cmd_p},
+  { "w" ,"Set watchpoint", cmd_w},
+  { "d" , "Delete watchpoint", cmd_d},
 
   /* TODO: Add more commands */
 
