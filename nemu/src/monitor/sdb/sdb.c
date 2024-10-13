@@ -55,11 +55,12 @@ static int cmd_q(char *args) {
 static int cmd_help(char *args);
 
 static int cmd_si(char *args) {
-  printf("%d\n",args[0]);
-  // if(args[0]=='\0') 
-  // cpu_exec(1);
-  // else 
-  // cpu_exec(args[0]);
+  if(args[0]=='\0') 
+  cpu_exec(1);
+  else 
+  {
+    cpu_exec(atoi(args));
+  }
   return 0;
 }
 
