@@ -55,7 +55,7 @@ static int cmd_q(char *args) {
 static int cmd_help(char *args);
 
 static int cmd_si(char *args) {
-  printf("%s\n",args);
+  printf("%d\n",args[0]);
   // if(args[0]=='\0') 
   // cpu_exec(1);
   // else 
