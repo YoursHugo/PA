@@ -65,6 +65,7 @@ static int cmd_si(char *args) {
 static int cmd_info(char *args) {
   if (args == NULL) {
     printf("Usage: info [rw]\n");
+    exit(1);
   } 
   if(args[0] == 'r')
     isa_reg_display();
