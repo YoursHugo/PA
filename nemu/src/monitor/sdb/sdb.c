@@ -77,8 +77,11 @@ static int cmd_info(char *args) {
 }
 
 static int cmd_x(char *args) {
-  //for(int i=0;i<CONFIG_MSIZE;i++)
-  //printf("i:\t%08x\n",paddr[i]);
+  if(args == NULL) {
+    printf("Usage: x N EXPR\n");
+    return 1;
+  }
+  printf("args: %s\n", args);
   return 0;
 }
 static int cmd_p(char *args) {
