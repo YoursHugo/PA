@@ -81,7 +81,8 @@ static int cmd_x(char *args) {
     printf("Usage: x N EXPR\n");
     return 1;
   }
-  printf("args: %c %c\n", args[0],args[1]);
+  char *arg = strtok(NULL, " ");
+  printf("args: %s\n", arg);
   return 0;
 }
 static int cmd_p(char *args) {
