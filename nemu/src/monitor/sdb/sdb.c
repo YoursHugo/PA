@@ -18,6 +18,7 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include "sdb.h"
+#include <memory/paddr.h>
 
 static int is_batch_mode = false;
 
@@ -84,8 +85,10 @@ static int cmd_x(char *args) {
   char *arg = strtok(NULL, " ");
   int N = atoi(arg);
   arg=strtok(NULL, " ");
-  int expr = strtol(arg,NULL,16);
-  printf("args: %d %d\n",N, expr);
+  int base = strtol(arg,NULL,16);
+  for(int i = 0; i < N; i++) {
+    printf("%08x\t:0x%08x\n",i,paddr_read(base + i*4, 4));
+  }
 
   return 0;
 }
