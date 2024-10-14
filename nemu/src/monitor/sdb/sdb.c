@@ -82,7 +82,10 @@ static int cmd_x(char *args) {
     return 1;
   }
   char *arg = strtok(NULL, " ");
-  printf("args: %s\n", arg);
+  int N = atoi(args);
+  arg=strtok(NULL, " ");
+  printf("args: %d %s\n",N, arg);
+
   return 0;
 }
 static int cmd_p(char *args) {
