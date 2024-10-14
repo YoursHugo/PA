@@ -84,7 +84,7 @@ static int cmd_x(char *args) {
   char *arg = strtok(NULL, " ");
   int N = atoi(arg);
   arg=strtok(NULL, " ");
-  int expr = atoi(arg);
+  int expr = strtol(arg,NULL,16);
   printf("args: %d %d\n",N, expr);
 
   return 0;
