@@ -87,7 +87,7 @@ static int cmd_x(char *args) {
   arg=strtok(NULL, " ");
   int base = strtol(arg,NULL,16);
   for(int i = 0; i < N; i++) {
-    printf("%08x\t:0x%08x\n",i,paddr_read(base + i*4, 4));
+    printf("%08x\t:0x%08x\n",base + i*4,paddr_read(base + i*4, 4));
   }
 
   return 0;
