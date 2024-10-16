@@ -92,12 +92,21 @@ static int cmd_x(char *args) {
 
   return 0;
 }
+//求出表达式EXPR的值
 static int cmd_p(char *args) {
-  return 0;
+  bool success=false;
+  int num=expr(args,&success);
+  if(success == false ) return 1;
+  else {
+    printf("%d\n",num);
+    return 0;
+  }
 }
+//当表达式EXPR的值发生变化时, 暂停程序执行
 static int cmd_w(char *args) {
   return 0;
 }
+//删除序号为N的监视点
 static int cmd_d(char *args) {
   return 0;
 }
