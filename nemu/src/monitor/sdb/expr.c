@@ -39,11 +39,13 @@ static struct rule {
   {" +", TK_NOTYPE},    // spaces
   {"\\+", '+'},         // plus
   {"==", TK_EQ},        // equal
-  {"\\-", '-'},
+  {"-", '-'},
   {"\\*", '*'},
-  {"\\/", '/'},
-  {"1",'1'}
-
+  {"/", '/'},
+  {"(",'('},
+  {")",')'},
+  {"[0-9]+", TK_NOTYPE},  // number
+  {"[a-zA-Z_][a-zA-Z0-9_]*", TK_NOTYPE}, // variable
 };
 
 #define NR_REGEX ARRLEN(rules)
@@ -123,7 +125,7 @@ word_t expr(char *e, bool *success) {
     *success = false;
     return 0;
   }
-  
+
   /* TODO: Insert codes to evaluate the expression. */
   //TODO();
 
