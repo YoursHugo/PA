@@ -52,7 +52,7 @@ static struct rule {
   {"/", TK_DIV},
   {"\\(", TK_LP},
   {"\\)", TK_RP},
-  {"[-_][0-9]+", TK_NUM},  // number
+  {"[-_]?[0-9]+", TK_NUM},  // number
   {"[a-zA-Z_][a-zA-Z0-9_]*", TK_VAB}, // variable
 };
 
