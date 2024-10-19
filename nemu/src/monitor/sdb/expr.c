@@ -31,6 +31,7 @@ enum {
   TK_LP, 
   TK_RP, 
   TK_VAB,
+  TK_REG,
   /* TODO: Add more token types */
 
 };
@@ -53,8 +54,8 @@ static struct rule {
   {"/", TK_DIV},
   {"\\(", TK_LP},
   {"\\)", TK_RP},
-  
   {"[a-zA-Z_][a-zA-Z0-9_]*", TK_VAB}, // variable
+  {"^\\$",TK_REG},
 };
 
 #define NR_REGEX ARRLEN(rules)
@@ -137,6 +138,6 @@ word_t expr(char *e, bool *success) {
 
   /* TODO: Insert codes to evaluate the expression. */
   //TODO();
-
+  
   return 0;
 }
