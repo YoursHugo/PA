@@ -48,7 +48,7 @@ static struct rule {
   {" +", TK_NOTYPE},    // spaces
   {"\\+", TK_PLUS},         // plus
   {"==", TK_EQ},        // equal
-  {"^-?[0-9]+$", TK_NUM},  // number
+  {"^[-]?[0-9]+$", TK_NUM},  // number
   {"-", TK_SUB},
   {"\\*", TK_MUL},
   {"/", TK_DIV},
@@ -138,6 +138,6 @@ word_t expr(char *e, bool *success) {
 
   /* TODO: Insert codes to evaluate the expression. */
   //TODO();
-  
+
   return 0;
 }
