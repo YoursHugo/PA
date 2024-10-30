@@ -54,7 +54,7 @@ static struct rule {
   {"/", TK_DIV},
   {"\\(", TK_LP},
   {"\\)", TK_RP},
-  {"-", TK_SUB},
+  {" -", TK_SUB},
   {"^\\$",TK_REG},
 };
 
