@@ -49,12 +49,14 @@ static struct rule {
   {"\\+", TK_PLUS},         // plus
   {"==", TK_EQ},        // equal
   {"^[0-9]+$", TK_NUM},  // number
-  {"[a-zA-Z\\_][a-zA-Z0-9_]*", TK_VAB}, // variable
+  {"(?<![a-zA-Z0-9\\)\\$])-(\\d+)", TK_NUM}, // Negative number
+  
+  // Subtraction: match a '-' preceded by numbers or variables
+  {"(?<=[0-9a-zA-Z\\)\\$])-(?=\\d+)", TK_SUB}, // Subtraction operator
   {"\\*", TK_MUL},
   {"/", TK_DIV},
   {"\\(", TK_LP},
   {"\\)", TK_RP},
-  {" -", TK_SUB},
   {"^\\$",TK_REG},
 };
 
