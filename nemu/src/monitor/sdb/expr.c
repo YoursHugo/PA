@@ -50,13 +50,10 @@ static struct rule {
   {"-", TK_SUB},         // sub
   {"==", TK_EQ},        // equal
   {"^[0-9]+$", TK_NUM},  // number
-  {"[a-zA-Z\\_][a-zA-Z0-9_]*", TK_VAB}, // variable
   {"\\*", TK_MUL},
   {"/", TK_DIV},
   {"\\(", TK_LP},
   {"\\)", TK_RP},
-  {" -", TK_SUB},
-  {"^\\$",TK_REG},
 };
 
 #define NR_REGEX ARRLEN(rules)
