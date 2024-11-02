@@ -49,7 +49,7 @@ static struct rule {
   {"\\+", TK_PLUS},         // plus
   {"-", TK_SUB},         // sub
   {"==", TK_EQ},        // equal
-  {"^[0-9]+$", TK_NUM},  // number
+  {"[0-9]+", TK_NUM},  // number
   {"\\*", TK_MUL},
   {"/", TK_DIV},
   {"\\(", TK_LP},
