@@ -48,7 +48,7 @@ static struct rule {
   {" +", TK_NOTYPE},    // spaces
   {"\\+", TK_PLUS},         // plus
   {"==", TK_EQ},        // equal
-  {"(?<![a-zA-Z0-9\\)\\$])-(\\d+)", TK_NUM}, // 负数
+  {"[-]?[0-9]+", TK_NUM},  // number
   {"-", TK_SUB},         // sub
   {"\\*", TK_MUL},
   {"/", TK_DIV},
