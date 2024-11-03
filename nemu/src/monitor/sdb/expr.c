@@ -146,7 +146,7 @@ static bool make_token(char *e) {
   return true;
 }
 
-bool check_parentheses(char *e, int p, int q) {
+bool check_parentheses(int p, int q) {
   if (tokens[p].type != TK_LP || tokens[q].type != TK_RP) {
     return false;
   }
@@ -165,7 +165,7 @@ bool check_parentheses(char *e, int p, int q) {
   return true;
 }
 
-u_int32_t eval(char *e,int p,int q) {
+u_int32_t eval(int p,int q) {
   if (p > q) {
     /* Bad expression */
     assert(0);
@@ -177,22 +177,22 @@ u_int32_t eval(char *e,int p,int q) {
      */
     return atoi(tokens[p].str);
   }
-  else if (check_parentheses(e, p, q) == true) {
+  else if (check_parentheses(p, q) == true) {
     /* The expression is surrounded by a matched pair of parentheses.
      * If that is the case, just throw away the parentheses.
      */
-    return eval(e, p + 1, q - 1);
+    return eval(p + 1, q - 1);
   }
   else {
     int op= -1;//= the position of 主运算符 in the token expression;
     for(int i=p;i<=q;i++){
-      if(tokens[i].type == TK_PLUS || tokens[i].type == TK_SUB || tokens[i].type == TK_MUL || tokens[i].type == TK_DIV){
+      if(tokens[i].type == '+' || tokens[i].type == '-' || tokens[i].type == '*' || tokens[i].type == '/' ){
         op = i;
         break;
       }
     }
-    u_int32_t val1 = eval(e, p, op - 1);
-    u_int32_t val2 = eval(e, op + 1, q);
+    u_int32_t val1 = eval(p, op - 1);
+    u_int32_t val2 = eval(op + 1, q);
 
     switch (tokens[op].type) {
       case '+': return val1 + val2;
@@ -211,7 +211,7 @@ word_t expr(char *e, bool *success) {
   }
   /* TODO: Insert codes to evaluate the expression. */
   //TODO();
-  u_int32_t result = eval(e, 0, nr_token-1);
+  u_int32_t result = eval(0, nr_token-1);
   *success = true;
   return result;
 }
