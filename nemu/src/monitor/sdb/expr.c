@@ -109,12 +109,22 @@ static bool make_token(char *e) {
          * to record the token in the array `tokens'. For certain types
          * of tokens, some extra actions should be performed.
          */
-
         switch (rules[i].token_type) {
-
-          default: //TODO();
+          case TK_NOTYPE: break;
+          case TK_NUM:
+          case TK_PLUS:
+          case TK_SUB:
+          case TK_MUL:
+          case TK_DIV:
+          case TK_EQ:
+          case TK_LP:
+          case TK_RP:
+          case TK_VAB:
+            tokens[nr_token].type = rules[i].token_type;
+            strncpy(tokens[nr_token].str, substr_start, substr_len);
+            break;
+          default: assert(0);
         }
-
         break;
       }
     }
