@@ -196,6 +196,4 @@ word_t expr(char *e, bool *success) {
   u_int32_t result = eval(e, 0, nr_token);
   *success = true;
   return result;
-
-  return 0;
 }

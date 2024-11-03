@@ -96,7 +96,7 @@ static int cmd_x(char *args) {
 static int cmd_p(char *args) {
   bool success=false;
   int num=expr(args,&success);
-  if(success == false ) return 1;
+  if(success == false) return 1;
   else {
     printf("%d\n",num);
     return 0;
