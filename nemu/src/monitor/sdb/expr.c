@@ -112,7 +112,6 @@ static bool make_token(char *e) {
           case TK_NOTYPE: break;
           case TK_PLUS:
             tokens[nr_token++].type = '+';
-            
             break;
           case TK_SUB:
             tokens[nr_token++].type = '-';
