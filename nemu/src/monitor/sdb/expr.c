@@ -111,26 +111,21 @@ static bool make_token(char *e) {
         switch (rules[i].token_type) {
           case TK_NOTYPE: break;
           case TK_PLUS:
-            tokens[nr_token++].type = '+';
-            break;
           case TK_SUB:
-            tokens[nr_token++].type = '-';
-            break;
           case TK_MUL:
-            tokens[nr_token++].type = '*';
-            break;
           case TK_DIV:
-            tokens[nr_token++].type = '/';
-            break;
           case TK_NUM: 
           case TK_EQ:
           case TK_LP:
           case TK_RP:
           case TK_VAB:
-            tokens[nr_token++].type = rules[i].token_type;
+            tokens[nr_token].type = rules[i].token_type;
             strncpy(tokens[nr_token].str, substr_start, substr_len);
             break;
           default: assert(0);
+        }
+        if(rules[i].token_type != TK_NOTYPE) {
+          nr_token++;
         }
         break;
       }
