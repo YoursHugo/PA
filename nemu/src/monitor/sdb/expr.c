@@ -114,7 +114,7 @@ static bool make_token(char *e) {
           case TK_SUB:
           case TK_MUL:
           case TK_DIV:
-          case TK_NUM: 
+          case TK_NUM:
           case TK_EQ:
           case TK_LP:
           case TK_RP:
@@ -187,6 +187,7 @@ u_int32_t eval(int p,int q) {
           }
       }
     }
+    assert(op!=-1);
     u_int32_t val1 = eval(p, op - 1);
     u_int32_t val2 = eval(op + 1, q);
 
