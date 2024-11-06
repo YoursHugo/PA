@@ -180,7 +180,7 @@ u_int32_t eval(int p,int q) {
   else {
     int op= -1;//= the position of 主运算符 in the token expression;
     for(int i=p;i<=q;i++){
-      if(tokens[i].type == '+' || tokens[i].type == '-' || tokens[i].type == '*' || tokens[i].type == '/' ){
+      if(tokens[i].type == TK_PLUS || tokens[i].type == TK_SUB || tokens[i].type == TK_MUL || tokens[i].type == TK_DIV ){
         op = i;
         break;
       }
